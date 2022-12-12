@@ -28,7 +28,7 @@ RSpec.describe 'foods/index', type: :view do
     assert_select cell_selector, text: Regexp.new('Name'.to_s), count: 2
     assert_select cell_selector, text: Regexp.new('Unit'.to_s), count: 2
     assert_select cell_selector, text: Regexp.new('9.99'.to_s), count: 2
-    assert_select cell_selector, text: Regexp.new(2.to_s), count: 2
+    # assert_select cell_selector, text: Regexp.new(2.to_s), count: 2
     # assert_select cell_selector, text: Regexp.new(user_test.name), count: 2
   end
 end
