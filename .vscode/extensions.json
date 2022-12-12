@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "github.vscode-pull-request-github",
+        "rebornix.ruby",
+        "castwide.solargraph",
+        "lorankloeze.ruby-rubocop-revived",
+        "stylelint.vscode-stylelint",
+        "mhutchie.git-graph"
+    ]
+}
