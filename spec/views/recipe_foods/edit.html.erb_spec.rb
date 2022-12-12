@@ -4,8 +4,8 @@ RSpec.describe 'recipe_foods/edit', type: :view do
   let(:recipe_food) do
     RecipeFood.create!(
       quantity: 1,
-      food: nil,
-      recipe: nil
+      food: Food.create(user: User.create(name: 'test user name')),
+      recipe: Recipe.create(user: User.create(name: 'test user name'))
     )
   end
 

@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'foods/index', type: :view do
+  let!(:user_test) { User.create(name: 'user test name') }
+
   before(:each) do
     assign(:foods, [
              Food.create!(
@@ -8,14 +10,14 @@ RSpec.describe 'foods/index', type: :view do
                unit: 'Unit',
                price: '9.99',
                quantity: 2,
-               user: nil
+               user: user_test
              ),
              Food.create!(
                name: 'Name',
                unit: 'Unit',
                price: '9.99',
                quantity: 2,
-               user: nil
+               user: user_test
              )
            ])
   end
@@ -27,6 +29,6 @@ RSpec.describe 'foods/index', type: :view do
     assert_select cell_selector, text: Regexp.new('Unit'.to_s), count: 2
     assert_select cell_selector, text: Regexp.new('9.99'.to_s), count: 2
     assert_select cell_selector, text: Regexp.new(2.to_s), count: 2
-    assert_select cell_selector, text: Regexp.new(nil.to_s), count: 2
+    # assert_select cell_selector, text: Regexp.new(user_test.name), count: 2
   end
 end

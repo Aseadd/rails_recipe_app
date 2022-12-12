@@ -1,11 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe 'recipe_foods/show', type: :view do
+  let!(:food) { Food.create(user: User.create) }
+  let!(:recipe) { Recipe.create(user: User.create) }
+
   before(:each) do
     assign(:recipe_food, RecipeFood.create!(
                            quantity: 2,
-                           food: nil,
-                           recipe: nil
+                           food:,
+                           recipe:
                          ))
   end
 

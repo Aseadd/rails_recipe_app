@@ -8,7 +8,7 @@ RSpec.describe 'recipes/edit', type: :view do
       cooking_time_seconds: 1,
       description: 'MyText',
       public: false,
-      user: nil
+      user: User.create
     )
   end
 

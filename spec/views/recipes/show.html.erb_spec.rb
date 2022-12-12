@@ -8,7 +8,7 @@ RSpec.describe 'recipes/show', type: :view do
                       cooking_time_seconds: 3,
                       description: 'MyText',
                       public: false,
-                      user: nil
+                      user: User.create
                     ))
   end
 
@@ -19,6 +19,6 @@ RSpec.describe 'recipes/show', type: :view do
     expect(rendered).to match(/3/)
     expect(rendered).to match(/MyText/)
     expect(rendered).to match(/false/)
-    expect(rendered).to match(//)
+    # expect(rendered).to match(//)
   end
 end

@@ -7,7 +7,7 @@ RSpec.describe 'foods/show', type: :view do
                     unit: 'Unit',
                     price: '9.99',
                     quantity: 2,
-                    user: nil
+                    user: User.create
                   ))
   end
 
