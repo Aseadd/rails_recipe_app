@@ -61,7 +61,6 @@ jobs:
 
       - name: Setup test database
         env:
-          RAILS_ENV: test
           DATABASE_USER: ${{ matrix.database-user }}
           DATABASE_PASSWORD: ${{ matrix.database-password }}
           DATABASE_HOST: ${{ matrix.database-host }}
