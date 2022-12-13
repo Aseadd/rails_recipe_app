@@ -77,4 +77,7 @@ group :development do
 
   # ruby intellisense
   gem 'solargraph'
+
+  # Add devise 
+  gem 'devise'
 end
