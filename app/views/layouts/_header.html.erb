@@ -1,0 +1,20 @@
+<header>
+    <%= link_to "Recipe APP", root_path %>
+    <nav>
+        <div class="nav-item">
+            <%= link_to "Foods", foods_path %>
+        </div>
+        <div class="nav-item">
+            <%= link_to "Recipes", recipes_path %>
+        </div>
+        <div class="nav-item">
+            <%= link_to "Public recipes", publics_recipes_path %>
+        </div>
+        <div class="nav-item">
+            <%= link_to "shopping list", general_shopping_list_index_path %>
+        </div>
+        <div class="nav-item">
+            <%= button_to "logout", destroy_user_session_path, method: :delete  %>
+        </div>
+    </nav>
+</header>

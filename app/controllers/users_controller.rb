@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_user, only: %i[show edit update destroy]
 
   # GET /users or /users.json
@@ -51,6 +52,14 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
+  # GET /general_shopping_list or /general_shopping_list.json
+  def shopping_list
+    respond_to do |format|
+      format.html { redirect_to root_url }
       format.json { head :no_content }
     end
   end

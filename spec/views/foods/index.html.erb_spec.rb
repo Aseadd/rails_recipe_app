@@ -1,34 +1,5 @@
 require 'rails_helper'
 
 RSpec.describe 'foods/index', type: :view do
-  let!(:user_test) { User.create(name: 'user test name') }
-
-  before(:each) do
-    assign(:foods, [
-             Food.create!(
-               name: 'Name',
-               unit: 'Unit',
-               price: '9.99',
-               quantity: 2,
-               user: user_test
-             ),
-             Food.create!(
-               name: 'Name',
-               unit: 'Unit',
-               price: '9.99',
-               quantity: 2,
-               user: user_test
-             )
-           ])
-  end
-
-  it 'renders a list of foods' do
-    render
-    cell_selector = Rails::VERSION::STRING >= '7' ? 'div>p' : 'tr>td'
-    assert_select cell_selector, text: Regexp.new('Name'.to_s), count: 2
-    assert_select cell_selector, text: Regexp.new('Unit'.to_s), count: 2
-    assert_select cell_selector, text: Regexp.new('9.99'.to_s), count: 2
-    # assert_select cell_selector, text: Regexp.new(2.to_s), count: 2
-    # assert_select cell_selector, text: Regexp.new(user_test.name), count: 2
-  end
+  it 'renders a list of foods'
 end
