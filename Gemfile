@@ -78,6 +78,6 @@ group :development do
   # ruby intellisense
   gem 'solargraph'
 
-  # Add devise 
+  # Add devise
   gem 'devise'
 end
