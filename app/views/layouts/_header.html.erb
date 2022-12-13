@@ -1,20 +1,32 @@
 <header>
-    <%= link_to "Recipe APP", root_path %>
+    <%= link_to "Recipe APP" , root_path %>
     <nav>
+    <% if user_signed_in? %>
         <div class="nav-item">
-            <%= link_to "Foods", foods_path %>
+            <%= link_to "Foods" , foods_path %>
         </div>
         <div class="nav-item">
-            <%= link_to "Recipes", recipes_path %>
+            <%= link_to "Recipes" , recipes_path %>
         </div>
         <div class="nav-item">
-            <%= link_to "Public recipes", publics_recipes_path %>
+            <%= link_to "Public recipes" , publics_recipes_path %>
         </div>
         <div class="nav-item">
-            <%= link_to "shopping list", general_shopping_list_index_path %>
+            <%= link_to "shopping list" , general_shopping_list_index_path %>
         </div>
         <div class="nav-item">
-            <%= button_to "logout", destroy_user_session_path, method: :delete  %>
+            <%= link_to "My Profile" , edit_user_registration_path %>
         </div>
+        <div class="nav-item">
+            <%= button_to "Log out" , destroy_user_session_path, method: :delete, class: "log-out-btn" %>
+        </div>
+    <% else %>
+        <div class="nav-item">
+            <%= link_to "Sign up" , new_registration_path(resource_name) %>
+        </div>
+        <div class="nav-item">
+            <%= link_to "Log in" , new_session_path(resource_name) %>
+        </div>
+    <% end %>
     </nav>
 </header>
