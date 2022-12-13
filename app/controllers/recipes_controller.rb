@@ -55,6 +55,11 @@ class RecipesController < ApplicationController
     end
   end
 
+  # GET /public_recipes or /public_recipes.json
+  def publics
+    @publics = Recipe.publics
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
