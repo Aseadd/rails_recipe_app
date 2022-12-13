@@ -34,12 +34,32 @@ users = User.create([
     },
 ])
 
+def create_hot_dog_with_ingredients(foods, user_in)
+    recipe = Recipe.create(
+        name: "#{user_in.name}'s unique hot dog recipe",
+        preparation_time_seconds: 10.minute.second,
+        cooking_time_seconds: 5.minute.second,
+        description: "my only and unique hot dog recipe",
+        public: user_in.id % 2 == 0,
+        user: user_in
+    )
+    
+
+    foods.each do |food|
+        RecipeFood.create(
+            quantity: 10 + (user_in.id % 5),
+            food:,
+            recipe:
+        )
+    end
+end
+
 
 def user_create_foods_and_recipes(user_in)
-    Food.create([
+    foods = Food.create([
         {
             name: "sausage",
-            unit: "",
+            unit: "unit",
             price: "1.1",
             quantity: 2,
             user: user_in
@@ -71,8 +91,17 @@ def user_create_foods_and_recipes(user_in)
             price: "5.5",
             quantity: 100,
             user: user_in
+        },
+        {
+            name: "hot dog breat",
+            unit: "unit",
+            price: "6.6",
+            quantity: 2,
+            user: user_in
         }
     ])
+
+    create_hot_dog_with_ingredients(foods, user_in)
 end
 
 users.each do |user|
