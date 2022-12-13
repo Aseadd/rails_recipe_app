@@ -1,14 +1,36 @@
+<%= stylesheet_link_tag "user_list"%>
 <p style="color: green"><%= notice %></p>
 
+<div class="container">
 <h1>Foods</h1>
 
-<div id="foods">
-  <% @foods.each do |food| %>
-    <%= render food %>
-    <p>
-      <%= link_to "Show this food", food %>
-    </p>
-  <% end %>
+<div class= "add-food"><%= link_to "New food", new_food_path %> </div>
+	<table>
+		<thead>
+			<tr>
+
+				<th>Name</th>
+				<th>Unit</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Owner</th>
+        <th>Action</th>
+        <th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+    <% @foods.each do |food|%>
+			<tr>
+				<td><%= food.name%></td>
+        <td><%= food.unit%></td>
+        <td><%= food.price%></td>
+        <td><%= food.quantity%></td>
+        <td><%= food.user.name%></td>
+        <td><%= button_to "Delete", @food, method: :delete %></td>
+        <td><%= link_to "Show this food", food %></td>
+			</tr>
+    <% end %>
+		</tbody>
+	</table>
 </div>
 
-<%= link_to "New food", new_food_path %>
