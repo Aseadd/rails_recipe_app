@@ -57,6 +57,9 @@ group :development, :test do
 
   # testing library
   gem 'rspec-rails'
+
+  # Add devise
+  gem 'devise'
 end
 
 group :development do
@@ -77,7 +80,4 @@ group :development do
 
   # ruby intellisense
   gem 'solargraph'
-
-  # Add devise
-  gem 'devise'
 end
