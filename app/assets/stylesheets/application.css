@@ -57,10 +57,10 @@ body {
   }
 }
 
-.form_input {
+.form-input {
   display: block;
   padding: 20px;
-  font-family: "Roboto", sans-serif;
+  font-family: Roboto, sans-serif;
   border: 1px solid #000;
   border-radius: 6px;
   outline: 0;
@@ -70,14 +70,14 @@ body {
   margin-bottom: 10px;
 }
 
-.form_input:focus {
+.form-input :focus {
   border: 2px solid red;
 }
 
 .btn {
   display: block;
   padding: 20px;
-  font-family: "Roboto", sans-serif;
+  font-family: Roboto, sans-serif;
   outline: 0;
   transition: 0.3s;
   width: 100%;
