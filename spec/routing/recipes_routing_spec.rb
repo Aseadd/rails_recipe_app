@@ -6,6 +6,10 @@ RSpec.describe RecipesController, type: :routing do
       expect(get: '/recipes').to route_to('recipes#index')
     end
 
+    it 'publics to #publics' do
+      expect(get: '/recipes/publics').to route_to('recipes#publics')
+    end
+
     it 'routes to #new' do
       expect(get: '/recipes/new').to route_to('recipes#new')
     end
@@ -14,20 +18,8 @@ RSpec.describe RecipesController, type: :routing do
       expect(get: '/recipes/1').to route_to('recipes#show', id: '1')
     end
 
-    it 'routes to #edit' do
-      expect(get: '/recipes/1/edit').to route_to('recipes#edit', id: '1')
-    end
-
     it 'routes to #create' do
       expect(post: '/recipes').to route_to('recipes#create')
-    end
-
-    it 'routes to #update via PUT' do
-      expect(put: '/recipes/1').to route_to('recipes#update', id: '1')
-    end
-
-    it 'routes to #update via PATCH' do
-      expect(patch: '/recipes/1').to route_to('recipes#update', id: '1')
     end
 
     it 'routes to #destroy' do
