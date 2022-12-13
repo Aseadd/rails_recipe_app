@@ -76,15 +76,14 @@ body {
 
 .btn {
   display: block;
-  padding: 20px;
   font-family: Roboto, sans-serif;
   outline: 0;
   transition: 0.3s;
   width: 100%;
-  height: 30px;
+  height: 40px;
   margin-bottom: 10px;
   background: #aba194;
-  color: white;
+  color: #fff;
   cursor: pointer;
   border: none;
   border-radius: 6px;
