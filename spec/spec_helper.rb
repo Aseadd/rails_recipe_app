@@ -90,3 +90,15 @@ RSpec.configure do |config|
   #   # as the one that triggered the failure.
   #   Kernel.srand config.seed
 end
+
+def resource_name
+  :user
+end
+
+def resource
+  @resource ||= User.new
+end
+
+def devise_mapping
+  @devise_mapping ||= Devise.mappings[:user]
+end
