@@ -56,7 +56,7 @@ class RecipesController < ApplicationController
   end
 
   # GET /public_recipes or /public_recipes.json
-  def show
+  def publics
     # @publics = Recipe.all
   end
 
