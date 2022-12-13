@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+users = User.create([
+    {name: 'Ruth Bradley'},
+    {name: 'Leticia Barrett'},
+    {name: 'Kaiden Carlson'},
+    {name: 'Aubree Rojas'},
+    {name: 'Trevon Rich'},
+])
+
+foods = Food.create([
+
+])
+
+
+
