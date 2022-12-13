@@ -14,87 +14,84 @@
  *= require_self
  */
 
- * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: "Roboto", sans-serif;
-    font-size: 14px;
-    background-size: 200% 100% !important;
-    animation: move 10s ease infinite;
-    transform: translate3d(0, 0, 0);
-    background: linear-gradient(45deg, #49D49D 10%, #A2C7E5 90%);
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  animation: move 10s ease infinite;
+  transform: translate3d(0, 0, 0);
+  background: linear-gradient(45deg, #49d49d 10%, #a2c7e5 90%);
+  background-size: 200% 100% !important;
 }
 
- .form {
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 70vh;
-    width: 50%;
-    margin: 20px auto;
-    border-radius: 6px;
-    overflow: hidden;
-    opacity: 0;
-    transform: translate3d(0, 500px, 0);
-    animation: arrive 500ms ease-in-out 0.9s forwards;
-    background: white;
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  width: 50%;
+  margin: 20px auto;
+  border-radius: 6px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translate3d(0, 500px, 0);
+  animation: arrive 500ms ease-in-out 0.9s forwards;
+  background: white;
 }
 
 @keyframes arrive {
-    0% {
-        opacity: 0;
-        transform: translate3d(0, 50px, 0);
-    }
-    
-    100% {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-    }
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 50px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
-
-
 .form_input {
-    display: block;
-    padding: 20px;
-    font-family: "Roboto", sans-serif;
-    border: 1px solid #000;
-    border-radius: 6px;
-    outline: 0;
-    transition: 0.3s;
-    width: 100%;
-    height: 30px;
-    margin-bottom: 10px;
+  display: block;
+  padding: 20px;
+  font-family: "Roboto", sans-serif;
+  border: 1px solid #000;
+  border-radius: 6px;
+  outline: 0;
+  transition: 0.3s;
+  width: 100%;
+  height: 30px;
+  margin-bottom: 10px;
 }
 
 .form_input:focus {
-    border: 2px solid red;
+  border: 2px solid red;
 }
 
 .btn {
-    display: block;
-    padding: 20px;
-    font-family: "Roboto", sans-serif;
-    outline: 0;
-    transition: 0.3s;
-    width: 100%;
-    height: 30px;
-    margin-bottom: 10px;
-    background: #ABA194;
-    color: white;
-    cursor: pointer;
-    border: none;
-    border-radius: 6px;
-    font-size: 18px;
-    text-align: center;
+  display: block;
+  padding: 20px;
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  transition: 0.3s;
+  width: 100%;
+  height: 30px;
+  margin-bottom: 10px;
+  background: #aba194;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  text-align: center;
 }
 
 .btn :hover {
-    background: #A2C7E5;
+  background: #a2c7e5;
 }
