@@ -1,17 +1,6 @@
 require 'rails_helper'
 
+# use for login / log out
 RSpec.describe 'users/new', type: :view do
-  before(:each) do
-    assign(:user, User.new(
-                    name: 'MyString'
-                  ))
-  end
-
-  it 'renders new user form' do
-    render
-
-    assert_select 'form[action=?][method=?]', users_path, 'post' do
-      assert_select 'input[name=?]', 'user[name]'
-    end
-  end
+  it 'renders new user form'
 end
