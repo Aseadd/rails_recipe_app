@@ -56,6 +56,14 @@ class UsersController < ApplicationController
     end
   end
 
+  # GET /general_shopping_list or /general_shopping_list.json
+  def shopping_list
+    respond_to do |format|
+      format.html { redirect_to root_url }
+      format.json { head :no_content }
+    end
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
