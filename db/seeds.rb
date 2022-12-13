@@ -73,10 +73,6 @@ def user_create_foods_and_recipes(user_in)
             user: user_in
         }
     ])
-
-    Recipe.create(
-        
-    )
 end
 
 users.each do |user|
