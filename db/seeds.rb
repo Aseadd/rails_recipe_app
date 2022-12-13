@@ -47,7 +47,7 @@ def create_hot_dog_with_ingredients(foods, user_in)
 
     foods.each do |food|
         RecipeFood.create(
-            quantity: 10 + (user_in.id % 5),
+            amount: 10 + (user_in.id % 5),
             food:,
             recipe:
         )
