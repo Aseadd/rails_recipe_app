@@ -60,18 +60,18 @@ tbody {
   td {
     position: relative;
 
-    &:hover {
-      &::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: -9999px;
-        bottom: -9999px;
-        background-color: #2b2d42;
-        z-index: -1;
-      }
-    }
+    // &:hover {
+    //   &::before {
+    //     content: "";
+    //     position: absolute;
+    //     left: 0;
+    //     right: 0;
+    //     top: -9999px;
+    //     bottom: -9999px;
+    //     background-color: #2b2d42;
+    //     z-index: -1;
+    //   }
+    // }
   }
 }
 
@@ -81,4 +81,77 @@ tbody {
   font-weight: bold;
   margin-top: 20px;
   color: #C73E1D;
+}
+
+.delete-btn {
+  display: block;
+  width: 60px;
+  height: 20px;
+  color: #fff;
+  text-align: right;
+  border: 1px solid #003459;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  background: #2b2d42;
+}
+
+.recipe-container {
+  display: flex;
+  flex-direction: column;
+  align-items: justify;
+  border: 1px solid #003049;
+  margin: 10px 10px 10px 10px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px 2px #003049;
+}
+
+.add-recipe {
+  display: block;
+  width: 130px;
+  height: 50px;
+  color: #fff;
+  text-align: right;
+  line-height: 40px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: 50px;
+}
+
+.recipe-item {
+  margin: 10px 10px 10px 10px;
+  border: 2px solid #003049;
+  border-radius: 5px;
+}
+
+.recipe {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 10px 10px 10px;
+  gap: 20px;
+}
+
+.recipe-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #0B0014;
+}
+
+.recipe-description {
+  font-size: 16px;
+  font-weight: bold;
+  color: #160C28;
+}
+
+.recipe-action {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px 10px 10px 10px;
 }
