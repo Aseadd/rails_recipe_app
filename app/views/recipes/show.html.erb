@@ -1,9 +1,48 @@
-<p style="color: green"><%= notice %></p>
+<main class="recipe-show" id="<%= dom_id @recipe %>">
+  <h1> <%= @recipe.name %> <span class="author"> by: <%= @recipe.user.name %></span> </h1>
+  <article class="recipe" >
+    <div class="actions">
+      <%= link_to "Back to recipes", recipes_path, class: 'go-back' %>
+      <%= button_to "Destroy this recipe", @recipe, method: :delete, form_class: 'button_to delete' %>
+    </div>
+    <div class="contect">
+      <div class="ingredients">
+        <table>
+          <thead>
+            <tr>
+              <th class="ingredients-head">ingredients</th>
+              <th class="amount-header">amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @ingredients.each do |ingredient| %>
+              <tr>
+                <td class="food-name"><%= ingredient.food.name %></td>
+                <td class="food-amount"><%= "#{ingredient.amount} #{ingredient.food.unit}" %></td>
+              </tr>
+            <% end %>
+          </tbody>
+          
+        </table>
+      </div>
+      <div class="spams">
+        <span class="preparation_time_seconds">
+          preparation: <%= @recipe.preparation_time_seconds.seconds.in_minutes %> min
+        </span>
+        <span class="cooking_time_seconds">
+          cooking: <%= @recipe.cooking_time_seconds.seconds.in_minutes %> min
+        </span>
+        <span class=<%= "is-#{@recipe.public ? 'public' : 'private'}"%> >
+          <%= @recipe.public ? 'Public' : 'Private' %>
+        </span>
+      </div>
+      <div class="description">
+        <p><%= @recipe.description %></p>
+      </div>
+    </div>
+  </article>
+</main>
 
-<%= render @recipe %>
 
-<div>
-  <%= link_to "Back to recipes", recipes_path %>
 
-  <%= button_to "Destroy this recipe", @recipe, method: :delete %>
-</div>
+
