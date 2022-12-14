@@ -1,14 +1,42 @@
+.notification-bar {
+  
+  text-align: center;
+
+  .notice {
+    background-color: yellow;
+  }
+
+  .alert {
+    background-color: red;
+  }
+}
+
 header {
   display: flex;
   padding: 1rem;
   justify-content: stretch;
   gap: 1rem;
   font-size: 1.25rem;
+  background-color: aliceblue;
+
+  a {
+    all: unset;
+    color: black;
+  }
+
+  .logo {
+    font-weight: bolder;
+  }
 
   nav {
     flex: 1;
     display: flex;
     justify-content: flex-end;
     gap: 1rem;
+    cursor: pointer;
+
+    button {
+      all: unset;
+    }
   }
 }

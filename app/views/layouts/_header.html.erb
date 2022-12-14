@@ -1,20 +1,23 @@
 <header>
-    <%= link_to "Recipe APP" , root_path %>
+    <div class="logo">
+        <%= link_to "Recipe APP" , root_path %>
+    </div>
     <nav>
+    
     <% if user_signed_in? %>
-        <div class="nav-item">
+        <div class="nav-item" >
             <%= link_to "Foods" , foods_path %>
         </div>
-        <div class="nav-item">
+        <div class="nav-item" >
             <%= link_to "Recipes" , recipes_path %>
         </div>
-        <div class="nav-item">
+        <div class="nav-item" >
             <%= link_to "Public recipes" , publics_recipes_path %>
         </div>
-        <div class="nav-item">
+        <div class="nav-item" >
             <%= link_to "shopping list" , general_shopping_list_index_path %>
         </div>
-        <div class="nav-item">
+        <div class="nav-item" >
             <%= link_to "My Profile" , edit_user_registration_path %>
         </div>
         <div class="nav-item">
