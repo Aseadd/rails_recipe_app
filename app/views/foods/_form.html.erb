@@ -1,3 +1,4 @@
+
 <%= form_with(model: food) do |form| %>
   <% if food.errors.any? %>
     <div style="color: red">
@@ -13,30 +14,30 @@
 
   <div>
     <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, required: true, class: "form-input" %>
   </div>
 
   <div>
     <%= form.label :unit, style: "display: block" %>
-    <%= form.text_field :unit %>
+    <%= form.text_field :unit, required: true, class: "form-input" %>
   </div>
 
   <div>
     <%= form.label :price, style: "display: block" %>
-    <%= form.text_field :price %>
+    <%= form.text_field :price, required: true, class: "form-input" %>
   </div>
 
   <div>
     <%= form.label :quantity, style: "display: block" %>
-    <%= form.number_field :quantity %>
+    <%= form.number_field :quantity, required: true, class: "form-input" %>
   </div>
 
   <div>
     <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
+    <%= form.text_field :user_id, required: true, class: "form-input" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class >
+    <%= form.submit "Create Food", class: "btn"%>
   </div>
 <% end %>
