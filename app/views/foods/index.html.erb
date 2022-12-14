@@ -13,20 +13,19 @@
 				<th>Unit</th>
         <th>Price</th>
         <th>Quantity</th>
-        <th>Owner</th>
         <th>Action</th>
         <th>Details</th>
 			</tr>
 		</thead>
 		<tbody>
+
     <% @foods.each do |food|%>
 			<tr>
 				<td><%= food.name%></td>
         <td><%= food.unit%></td>
         <td><%= food.price%></td>
         <td><%= food.quantity%></td>
-        <td><%= food.user.name%></td>
-        <td><%= button_to "Delete", @food, method: :delete %></td>
+        <td><%= button_to "Delete", food, method: :delete %></td>
         <td><%= link_to "Show this food", food %></td>
 			</tr>
     <% end %>
