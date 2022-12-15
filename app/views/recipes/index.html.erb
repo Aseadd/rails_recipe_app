@@ -17,8 +17,14 @@
       <%= recipe.description%>
     </div>
    </div>
+   <div class = "wrapped-btns">
     <div class = "recipe-action">
       <%= button_to "Remove", recipe, method: :delete, class: "delete-btn"%>
+    </div>
+
+    <div class ="recipe-action">
+      <%= link_to "Recipe Details ", recipe_path(recipe)%>
+    </div>
     </div>
     </div>
 

@@ -135,9 +135,29 @@ tbody {
   color: #160c28;
 }
 
+.wrapped-btns {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+
 .recipe-action {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 10px;
 }
+
+.recipe-action a {
+  display: block;
+  color: #fff;
+  text-align: right;
+  border: 1px solid #003459;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: auto;
+  background: #003049;
+}
+
