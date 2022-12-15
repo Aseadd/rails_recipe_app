@@ -87,6 +87,18 @@
         grid-row: 1 / span 1;
         padding: 0 1rem;
 
+        .fulfill {
+          color: green;
+        }
+
+        .fail {
+          color: darkred;
+        }
+
+        .food-amount {
+          font-weight: bolder;
+        }
+
         .food-name {
           color: black;
           text-decoration: underline;

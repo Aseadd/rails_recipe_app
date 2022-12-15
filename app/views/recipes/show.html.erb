@@ -16,9 +16,13 @@
           </thead>
           <tbody>
             <% @ingredients.each do |ingredient| %>
-              <tr>
-                <td class="food-name"><%= link_to "#{ingredient.food.name}", ingredient.food %></td>
-                <td class="food-amount"><%= "#{ingredient.amount} #{ingredient.food.unit}" %></td>
+              <tr class=<%= ingredient.food.quantity >= ingredient.amount ? 'fulfill' : 'fail' %>>
+                <td class="food-name">
+                  <%= link_to "#{ingredient.food.name}", ingredient.food %>
+                </td>
+                <td class="food-amount">
+                  <%= "#{ingredient.amount} #{ingredient.food.unit}" %>
+                </td>
               </tr>
             <% end %>
           </tbody>
