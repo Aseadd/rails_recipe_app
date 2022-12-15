@@ -1,14 +1,40 @@
+<%= stylesheet_link_tag "user_list"%>
 <p style="color: green"><%= notice %></p>
 
+<div class="container">
 <h1>Recipes</h1>
 
-<div id="recipes">
-  <% @recipes.each do |recipe| %>
-    <%= render recipe %>
-    <p>
-      <%= link_to "Show this recipe", recipe %>
-    </p>
-  <% end %>
+<div class= "add-recipe"><%= link_to "New Recipe", new_recipe_path %> </div>
+<% if @recipes.length > 0 %>
+<div class = "recipe-container">
+<% @recipes.each do |recipe|%>
+<div class = "recipe-item">
+  <div class = "recipe">
+    <div class = "recipe-name">
+      <%= recipe.name%>
+    </div>
+    <div class = "recipe-description">
+      <%= recipe.description%>
+    </div>
+   </div>
+   <div class = "wrapped-btns">
+    <div class = "recipe-action">
+      <%= button_to "Remove", recipe, method: :delete, class: "delete-btn"%>
+    </div>
+
+    <div class ="recipe-action">
+      <%= link_to "Recipe Details ", recipe_path(recipe)%>
+    </div>
+    </div>
+    </div>
+
+<% end %>
+</div>
+	
+<% else %>
+  <div class ="empty-msg">
+	<h2>There are no Recipes</h2>
+  </div>
+<% end %>
 </div>
 
-<%= link_to "New recipe", new_recipe_path %>
