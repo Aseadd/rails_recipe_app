@@ -51,7 +51,21 @@ def create_hot_dog_with_ingredients(foods, user_in)
   completed_recipe = create_recipe('hot dog', user_in, user_in.id.even?)
   incompleted_recipes = create_recipe('salad', user_in, user_in.id.odd?)
 
+  RecipeFood.create(
+    amount: 1,
+    food: Food.find_by_name('sausage'),
+    recipe: completed_recipe
+  )
+
+  RecipeFood.create(
+    amount: 1,
+    food: Food.find_by_name('hot dog breat'),
+    recipe: completed_recipe
+  )
+
   foods.each do |food|
+    next if food.name == 'sausage' 
+    next if food.name == 'hot dog breat'
     RecipeFood.create(
       amount: 10 + (user_in.id % 5),
       food:,
@@ -71,7 +85,12 @@ def create_hot_dog_with_ingredients(foods, user_in)
   )
   RecipeFood.create(
     amount: 5 + (user_in.id % 5),
-    food: Food.find_by_name('Tomatoes'),
+    food: Food.create(
+      name: 'Tomatoes',
+      unit: 'unit',
+      quantity: 0,
+      user: user_in
+    ),
     recipe: incompleted_recipes
   )
 end
