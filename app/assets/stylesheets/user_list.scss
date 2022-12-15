@@ -21,45 +21,51 @@
 }
 
 table {
-  border-collapse: collapse;
-  overflow: hidden;
-  box-shadow: 0 0 20px #2b2d42;
-  margin-bottom: 20px;
+	width: 800px;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  background: #2b2d42;
 }
 
 th,
 td {
-  padding: 15px;
-  background-color: #2b2d42;
-  color: #fff;
+	padding: 15px;
+	background-color: rgba(255,255,255,0.2);
+	color: #fff;
 }
 
 th {
-  text-align: left;
+	text-align: left;
 }
 
 thead {
-  display: block;
-
-  th {
-    background-color: #55608f;
-  }
+	th {
+		background-color: #55608f;
+	}
 }
 
 tbody {
-  display: block;
-  overflow: auto;
-  height: 400px;
-
-  tr {
-    &:hover {
-      background-color: #2b2d42;
-    }
-  }
-
-  td {
-    position: relative;
-  }
+	tr {
+		&:hover {
+			background-color: rgba(255,255,255,0.3);
+		}
+	}
+	td {
+		position: relative;
+		&:hover {
+			&:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: -9999px;
+				bottom: -9999px;
+				background-color: rgba(255,255,255,0.2);
+				z-index: -1;
+			}
+		}
+	}
 }
 
 .empty-msg {
