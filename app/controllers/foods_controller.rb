@@ -4,7 +4,6 @@ class FoodsController < ApplicationController
   # GET /foods or /foods.json
   def index
     @foods = Food.find_by_sql("SELECT * FROM foods WHERE user_id = #{current_user.id}")
-    
   end
 
   # GET /foods/1 or /foods/1.json
