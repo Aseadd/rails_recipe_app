@@ -3,4 +3,13 @@
 <h1>general shopping list</h1>
 
 <div id="recipe_foods">
+  <% @recipes.each do |recipe| %>
+    <div>
+    <%= recipe.name %>
+    <% recipe.recipeFood.each do |ingredient| %>
+       ----<%= ingredient.food.name %>
+    <% end %>
+    
+    </div>
+  <% end %>
 </div>

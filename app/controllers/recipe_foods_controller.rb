@@ -3,6 +3,6 @@ class RecipeFoodsController < ApplicationController
 
   # GET /general_shopping_list or /general_shopping_list.json
   def index
-    @recipe_foods = RecipeFood.all
+    @recipes = current_user.recipes
   end
 end
