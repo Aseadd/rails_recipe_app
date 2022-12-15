@@ -168,3 +168,50 @@ tbody {
   margin-left: auto;
   background: #003049;
 }
+
+.cancel-account-btn {
+  display: block;
+  width: 250px;
+  height: 50px;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  border: 2px solid red;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  background: #2b2d42;
+  cursor: pointer;
+}
+
+.back-link {
+  display: block;
+  width: 100px;
+  height: 50px;
+  color: tomato;
+  text-align: right;
+  line-height: 50px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-right: auto;
+  margin-left: 30px;
+}
+
+.back-link a {
+  display: block;
+  width: 100px;
+  height: 50px;
+  color: tomato;
+  text-align: right;
+  line-height: 50px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
