@@ -7,7 +7,6 @@
   font-weight: bolder;
 }
 
-
 .recipe-show {
   display: flex;
   flex-direction: column;
@@ -18,7 +17,6 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-
     border-radius: 1rem;
     padding: 1rem;
     background-color: aliceblue;
@@ -30,13 +28,36 @@
     }
   }
 
-  .recipe{
-  display: flex;
-  flex-direction: column;
-  border-radius: 1rem;
-  padding: 1rem;
-  background-color: aliceblue;
-  width: 100%;
+  .recipe {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    padding: 1rem;
+    background-color: aliceblue;
+    width: 100%;
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+
+      >* {
+        @include action-btn;
+
+        &.delete {
+          background-color: #ed5e68;
+          color: white;
+        }
+
+        &.go-back {
+          background-color: #8388a4;
+          color: white;
+        }
+
+        >* {
+          all: unset;
+        }
+      }
+    }
 
     .contect {
       display: grid;
@@ -45,7 +66,7 @@
       table {
         border-collapse: separate;
         border-spacing: 1rem 0;
-        gap: 1rem
+        gap: 1rem;
       }
 
       .spams {
@@ -66,7 +87,7 @@
         grid-row: 1 / span 1;
         padding: 0 1rem;
 
-        .food-name{
+        .food-name {
           color: black;
           text-decoration: underline;
           cursor: pointer;
@@ -81,29 +102,6 @@
         grid-column: 2 / -1;
         grid-row: 1 / span 2;
         margin: 2rem 1rem;
-      }
-    }
-    
-    .actions {
-      display: flex;
-      justify-content: space-between; 
-
-      >* {
-        @include action-btn;
-
-        &.delete {
-          background-color: #ED5E68;
-          color: white;
-        }
-
-        &.go-back {
-          background-color: #8388a4;
-          color: white;
-        }
-
-        >* {
-          all: unset;
-        }
       }
     }
   }
