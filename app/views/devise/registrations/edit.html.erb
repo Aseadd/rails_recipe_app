@@ -6,9 +6,15 @@
     <%= render "devise/shared/error_messages", resource: resource %>
   </div>
 
+ <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", required: true %>
+  </div>
+  </div>
+
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", required: true %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -33,10 +39,6 @@
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
-  
-	<div class="devise-shared-links">
-		<%= render "devise/shared/links" %>
-	</div>
 
   <div class="actions">
     <%= f.submit "Update" %>
