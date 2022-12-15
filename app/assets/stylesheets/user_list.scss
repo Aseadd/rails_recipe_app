@@ -4,67 +4,67 @@
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 100px auto;
-}
 
-.add-food {
-  display: block;
-  width: 100px;
-  height: 50px;
-  color: #fff;
-  text-align: right;
-  line-height: 50px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  margin-left: auto;
-}
-
-table {
-  width: 800px;
-  border-collapse: collapse;
-  overflow: hidden;
-  box-shadow: 0 0 20px #2b2d42;
-}
-
-th,
-td {
-  padding: 15px;
-  background-color: #2b2d42;
-  color: #fff;
-}
-
-th {
-  text-align: left;
-}
-
-thead {
-  th {
-    background-color: #55608f;
+  .add-food {
+    display: block;
+    width: 100px;
+    height: 50px;
+    color: #fff;
+    text-align: right;
+    line-height: 50px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-left: auto;
   }
-}
-
-tbody {
-  tr {
-    &:hover {
-      background-color: #2b2d42;
+  
+  table {
+    width: 800px;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px #2b2d42;
+  }
+  
+  th,
+  td {
+    padding: 15px;
+    background-color: #2b2d42;
+    color: #fff;
+  }
+  
+  th {
+    text-align: left;
+  }
+  
+  thead {
+    th {
+      background-color: #55608f;
     }
   }
-
-  td {
-    position: relative;
-
-    &:hover {
-      &::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: -9999px;
-        bottom: -9999px;
+  
+  tbody {
+    tr {
+      &:hover {
         background-color: #2b2d42;
-        z-index: -1;
+      }
+    }
+  
+    td {
+      position: relative;
+  
+      &:hover {
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: -9999px;
+          bottom: -9999px;
+          background-color: #2b2d42;
+          z-index: -1;
+        }
       }
     }
   }
