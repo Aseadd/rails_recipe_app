@@ -53,24 +53,25 @@ def create_hot_dog_with_ingredients(foods, user_in)
   completed_recipe = create_recipe('hot dog', user_in, user_in.id.even?)
   incompleted_recipes = create_recipe('salad', user_in, user_in.id.odd?)
 
-  puts "  inserting completed recipe ingredients"
+  puts '  inserting completed recipe ingredients'
   RecipeFood.create(
     amount: 1,
     food: Food.find_by_name('sausage'),
     recipe: completed_recipe
   )
-  puts "    inserted sausage"
+  puts '    inserted sausage'
 
   RecipeFood.create(
     amount: 1,
     food: Food.find_by_name('hot dog breat'),
     recipe: completed_recipe
   )
-  puts "    inserted hot dog breat"
+  puts '    inserted hot dog breat'
 
   foods.each do |food|
-    next if food.name == 'sausage' 
+    next if food.name == 'sausage'
     next if food.name == 'hot dog breat'
+
     RecipeFood.create(
       amount: 10 + (user_in.id % 5),
       food:,
@@ -79,7 +80,7 @@ def create_hot_dog_with_ingredients(foods, user_in)
     puts "    inserted #{food.name}: #{food.id} "
   end
 
-  puts "  inserting incompleted recipe ingredients"
+  puts '  inserting incompleted recipe ingredients'
 
   cabbage = Food.find_by_name('Cabbage')
 
@@ -89,7 +90,7 @@ def create_hot_dog_with_ingredients(foods, user_in)
     recipe: incompleted_recipes
   )
   puts "    inserted #{cabbage.name}: #{cabbage.id} "
-  
+
   onions = Food.find_by_name('Onion')
 
   RecipeFood.create(
@@ -118,7 +119,6 @@ def create_hot_dog_with_ingredients(foods, user_in)
 end
 
 def user_create_foods_and_recipes(user_in)
-
   puts "inserting recipes and food to #{user_in.name}"
 
   # gram kilogram liter milliliter piece
