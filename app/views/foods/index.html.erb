@@ -5,32 +5,36 @@
 <h1>Foods</h1>
 
 <div class= "add-food"><%= link_to "New food", new_food_path %> </div>
-	<table>
-		<thead>
-			<tr>
-
-				<th>Name</th>
-				<th>Unit</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        <th>Owner</th>
-        <th>Action</th>
-        <th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
+<% if @foods.length > 0 %>
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Unit</th>
+			<th>Unit Price</th>
+			<th>Quantity</th>
+			<th>Action</th>
+			<th>Details</th>
+		</tr>
+	</thead>
+<tbody>
     <% @foods.each do |food|%>
-			<tr>
-				<td><%= food.name%></td>
+	<tr>
+		<td><%= food.name%></td>
         <td><%= food.unit%></td>
         <td><%= food.price%></td>
         <td><%= food.quantity%></td>
-        <td><%= food.user.name%></td>
-        <td><%= button_to "Delete", @food, method: :delete %></td>
-        <td><%= link_to "Show this food", food %></td>
-			</tr>
+        <td><%= button_to "Delete", food, method: :delete, class: "delete-btn"%></td>
+        <td><%= link_to "Detail", food %></td>
+		</tr>
     <% end %>
-		</tbody>
-	</table>
+</tbody>
+</table>
+<% else %>
+  <div class ="empty-msg">
+	<h2>There are no foods</h2>
+  </div>
+<% end %>
 </div>
+
 

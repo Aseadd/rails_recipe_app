@@ -1,9 +1,10 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: %i[show edit update destroy]
+  before_action :authenticate_user!
 
   # GET /recipes or /recipes.json
   def index
-    @recipes = Recipe.includes(:user).all
+    @recipes = Recipe.find_by_sql("SELECT * FROM recipes WHERE user_id = #{current_user.id}")
   end
 
   # GET /recipes/1 or /recipes/1.json
@@ -14,6 +15,7 @@ class RecipesController < ApplicationController
   # POST /recipes or /recipes.json
   def create
     @recipe = Recipe.new(recipe_params)
+    @recipe.user = current_user
 
     respond_to do |format|
       if @recipe.save

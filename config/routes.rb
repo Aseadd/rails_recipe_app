@@ -9,6 +9,11 @@ Rails.application.routes.draw do
 
   resources :foods, only: [:index, :show, :new, :create, :destroy]
 
+  # get '/user/foods', to: 'users/foods#index', as: :user_foods
+  # get 'user/id', to: 'users#show', as: :user
+  # post '/user/foods/id', to: 'users/foods#index', as: :user_foods_path
+
+
   # resources :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
