@@ -38,23 +38,24 @@
 
     .actions {
       display: flex;
-      justify-content: space-between;
 
-      >* {
+      /* stylelint-disable-next-line selector-class-pattern */
+      .button_to {
         @include action-btn;
 
         &.delete {
           background-color: #ed5e68;
           color: white;
+
+          >* {
+            all: unset;
+          }
         }
 
         &.go-back {
           background-color: #8388a4;
           color: white;
-        }
-
-        >* {
-          all: unset;
+          margin-right: auto;
         }
       }
     }
@@ -95,6 +96,19 @@
           color: darkred;
         }
 
+        /* stylelint-disable-next-line selector-class-pattern */
+        .delete-btn {
+          @include action-btn;
+
+          background-color: #ed5e68;
+          color: white;
+          margin: 0.1rem;
+
+          >* {
+            all: unset;
+          }
+        }
+
         .food-amount {
           font-weight: bolder;
           white-space: nowrap;
@@ -107,6 +121,22 @@
 
           >* {
             all: unset;
+          }
+        }
+
+        .add-ingredients-action-form {
+          display: flex;
+          gap: 1rem;
+
+          .add-btn {
+            @include action-btn;
+
+            background-color: green;
+            color: white;
+
+            >* {
+              all: unset;
+            }
           }
         }
       }

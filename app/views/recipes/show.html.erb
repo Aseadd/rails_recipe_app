@@ -1,14 +1,13 @@
-<%= stylesheet_link_tag "recipe-show"%>
-
 <main class="recipe-show" id="<%= dom_id @recipe %>">
   <h1> <%= @recipe.name %> <span class="author"> by: <%= @recipe.user.name %></span> </h1>
   <article class="recipe" >
     <div class="actions">
-      <%= link_to "Back to recipes", recipes_path, class: 'go-back' %>
+      <%= link_to "Back to recipes", recipes_path, class: 'button_to go-back' %>
       <%= button_to "Destroy this recipe", @recipe, method: :delete, form_class: 'button_to delete' %>
     </div>
     <div class="contect">
       <div class="ingredients">
+        <%= ( render "recipe_food/add_ingredient", recipe: @recipe ) if @recipe.user == current_user %>
         <table>
           <thead>
             <tr>
@@ -37,7 +36,6 @@
 
             <% end %>
           </tbody>
-          
         </table>
       </div>
       <div class="spams">
