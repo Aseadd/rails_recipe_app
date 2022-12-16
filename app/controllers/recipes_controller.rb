@@ -12,6 +12,11 @@ class RecipesController < ApplicationController
     @ingredients = @recipe.recipeFood
   end
 
+  # GET /foods/new
+  def new
+    @recipe = Recipe.new
+  end
+
   # POST /recipes or /recipes.json
   def create
     @recipe = Recipe.new(recipe_params)
