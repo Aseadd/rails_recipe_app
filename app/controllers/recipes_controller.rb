@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
 
   # GET /recipes or /recipes.json
   def index
-    @recipes = Recipe.find_by_sql("SELECT * FROM recipes WHERE user_id = #{current_user.id}")
+    @recipes = current_user.recipe
   end
 
   # GET /recipes/1 or /recipes/1.json
