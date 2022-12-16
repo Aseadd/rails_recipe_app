@@ -2,6 +2,7 @@
   <h1> <%= @recipe.name %> <span class="author"> by: <%= @recipe.user.name %></span> </h1>
   <article class="recipe" >
     <div class="actions">
+      <%= link_to "General Shopping List", recipe_food_index_path, class: 'button_to g-s-l' %>
       <%= link_to "Back to recipes", recipes_path, class: 'button_to go-back' %>
       <%= button_to "Destroy this recipe", @recipe, method: :delete, form_class: 'button_to delete' %>
     </div>
