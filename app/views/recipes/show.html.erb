@@ -7,7 +7,7 @@
     </div>
     <div class="contect">
       <div class="ingredients">
-        <%= ( render "recipe_food/add_ingredient", recipe: @recipe ) if @recipe.user == current_user %>
+        <%= ( render "recipe_food/add_ingredient", recipe: @recipe ) if @recipe.user == current_user && @recipe.not_used_ingredients.any? %>
         <table>
           <thead>
             <tr>

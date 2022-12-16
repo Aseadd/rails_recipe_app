@@ -14,13 +14,21 @@ class RecipeFoodController < ApplicationController
     recipe = Recipe.find recipe_food_params[:recipe_id]
     food = Food.find recipe_food_params[:food_id]
 
-    recipe_food = RecipeFood.create(
+    recipe_food = RecipeFood.new(
       amount:,
       food:,
       recipe:
     )
 
-    puts recipe_food
+    respond_to do |format|
+      if recipe_food.save
+        format.html { redirect_to recipe_path(recipe), notice: 'Ingredient successfully Added.' }
+        format.json { render :show, status: :created, location: @recipe }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @recipe.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # DELETE /recipe_food/1 or /recipe_food/1.json
