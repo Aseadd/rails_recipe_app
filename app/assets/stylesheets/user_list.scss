@@ -12,6 +12,22 @@
   background: #2b2d42;
 }
 
+@mixin add-recipe {
+  display: block;
+  width: 130px;
+  height: 50px;
+  color: #fff;
+  text-align: right;
+  line-height: 40px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: 50px;
+}
+
 .recipe-container {
   display: flex;
   flex-direction: column;
@@ -22,19 +38,7 @@
   box-shadow: 2px 2px 2px 2px #003049;
 
   .add-recipe {
-    display: block;
-    width: 130px;
-    height: 50px;
-    color: #fff;
-    text-align: right;
-    line-height: 40px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: 50px;
+    @include add-recipe;
   }
 
   .recipe-item {
@@ -98,20 +102,9 @@
   flex-direction: column;
   align-items: center;
 
+  .add-recipe,
   .add-food {
-    display: block;
-    width: 100px;
-    height: 50px;
-    color: #fff;
-    text-align: right;
-    line-height: 50px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: 50px;
+    @include add-recipe;
   }
 
   table {
