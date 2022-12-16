@@ -12,7 +12,7 @@ RSpec.describe 'recipes/show', type: :view do
   let!(:food_A) do
     Food.create(
       name: 'food A test name',
-      unit: 'food A test unt',
+      unit: 'milliliter',
       price: '1111.11111',
       quantity: 222_222_222,
       user:
@@ -22,7 +22,7 @@ RSpec.describe 'recipes/show', type: :view do
   let!(:food_B) do
     Food.create(
       name: 'food B test name',
-      unit: 'food B test unt',
+      unit: 'milliliter',
       price: '3333.3333',
       quantity: 444_444_444,
       user:
