@@ -123,8 +123,8 @@ Clone this repository to your desired folder:
 
 Example commands:
 ```sh
-  git clone git@github.com:carlosmuerto/rails-recipe-app.git
-  cd rails-recipe-app
+  git clone git@github.com:carlosmuerto/rails_recipe_app.git
+  cd rails_recipe_app
 ```
 
 ### configure postgresql database
