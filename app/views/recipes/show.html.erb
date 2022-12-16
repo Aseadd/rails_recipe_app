@@ -1,28 +1,33 @@
 <p style="color: green"><%= notice %></p>
 
 <div class = "recipe-item">
-<div class = "recipe-header">
+<div class = "owner-info">
+  <strong>By: </strong>
+  <%= @recipe.user.name%>
+</div>
 <div class = "recipe-name">
   <strong>Name</strong>
-    <%= @recipe.name%>
-  </div>
-  <strong>Preparation Time in Minutes </strong>
-  <%= @recipe.preparation_time_seconds%>
-  <strong>Cooking Time in Minutes </strong>
-    <%= @recipe.cooking_time_seconds%>
+    <span><%= @recipe.name%></span>
+</div>
+<div class = "recipe-header">
+
+  <strong>Preparation Time in Minutes: </strong>
+  <%= @recipe.preparation_time_seconds >60 ? @recipe.preparation_time_seconds/60 : @recipe.preparation_time_seconds%>
+  <%= @recipe.preparation_time_seconds >60 ? "hours" : "minutes" %>
+  <strong>Cooking Time in Minutes: </strong>
+    <%= @recipe.cooking_time_seconds > 60 ? @recipe.cooking_time_seconds/60  : @recipe.cooking_time_seconds  %>
+    <%= @recipe.cooking_time_seconds > 60 ? "hours" : "minutes" %>
   </div>
   <div class = "recipe-detail">
-  <strong>Description </strong>
+  <strong>Description: </strong>
     <%= @recipe.description%>
 
- <%= link_to "Back to recipes", recipes_path %>
+<div class = "action-wrapper">
+ <%= link_to "Back to recipes", recipes_path, class: "back-btn" %>
 
-  <%= button_to "Destroy this recipe", @recipe, method: :delete %>
+  <%= button_to "Destroy this recipe", @recipe, method: :delete, class: "destroy-btn" %>
   </div>
-  
-  
-   <strong>By</strong>
-    <%= @recipe.user.name%>
+</div>
 </div>
 
 
