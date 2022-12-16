@@ -13,7 +13,9 @@
           <thead>
             <tr>
               <th class="ingredients-head">ingredients</th>
-              <th class="amount-header">amount</th>
+              <th class="amount-head">amount</th>
+              <th class="total-cost-head">total cost</th>
+              <th class="action-head">actions</th>
             </tr>
           </thead>
           <tbody>
@@ -25,7 +27,14 @@
                 <td class="food-amount">
                   <%= "#{ingredient.amount} #{ingredient.food.unit}" %>
                 </td>
+                <td>
+                  <%= "$#{ingredient.total_cost}" %>
+                </td>
+                <td>
+                  <%= button_to "Remove", ingredient, method: :delete, class: "delete-btn"%>
+                </td>
               </tr>
+
             <% end %>
           </tbody>
           
