@@ -19,5 +19,13 @@ RSpec.describe 'devise/registrations/edit', type: :view do
     it 'render "edit User" title' do
       expect(rendered).to match(/Edit User/)
     end
+
+    it 'ask for a Email' do
+      expect(rendered).to match(/Email/)
+    end
+
+    it 'ask for a password' do
+      expect(rendered).to match(/Password/)
+    end
   end
 end
