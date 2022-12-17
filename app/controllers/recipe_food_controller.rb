@@ -7,8 +7,10 @@ class RecipeFoodController < ApplicationController
     @recipes = current_user.recipes
 
     @total_cost = 0
+    @total_items = 0
 
     @recipes.each do |recipe|
+      @total_items += recipe.need_to_buy_ingredients.count
       @total_cost += recipe.need_to_buy_ingredients_cost
     end
   end
