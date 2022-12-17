@@ -28,6 +28,36 @@
   margin-right: 50px;
 }
 
+.back-link {
+  display: block;
+  width: 100px;
+  height: 50px;
+  color: tomato;
+  text-align: right;
+  line-height: 50px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-right: auto;
+  margin-left: 30px;
+
+  a {
+    display: block;
+    width: 100px;
+    height: 50px;
+    color: tomato;
+    text-align: right;
+    line-height: 50px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+}
+
 .recipe-container {
   display: flex;
   flex-direction: column;
@@ -78,19 +108,19 @@
     flex-direction: row;
     justify-content: space-between;
     margin: 10px;
-  }
 
-  .recipe-action a {
-    display: block;
-    color: #fff;
-    text-align: right;
-    border: 1px solid #003459;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-    margin-left: auto;
-    background: #003049;
+    a {
+      display: block;
+      color: #fff;
+      text-align: right;
+      border: 1px solid #003459;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      margin-left: auto;
+      background: #003049;
+    }
   }
 
   .delete-btn {
@@ -186,36 +216,6 @@
   margin-bottom: 20px;
   background: #2b2d42;
   cursor: pointer;
-}
-
-.back-link {
-  display: block;
-  width: 100px;
-  height: 50px;
-  color: tomato;
-  text-align: right;
-  line-height: 50px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  margin-right: auto;
-  margin-left: 30px;
-}
-
-.back-link a {
-  display: block;
-  width: 100px;
-  height: 50px;
-  color: tomato;
-  text-align: right;
-  line-height: 50px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 20px;
 }
 
 .detail-btn {
