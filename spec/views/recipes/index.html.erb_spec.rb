@@ -7,6 +7,5 @@ RSpec.describe 'recipes/index', type: :feature do
     sign_in user
     visit recipes_path
     expect(page).to have_content('Foods')
-    end
-
+  end
 end
