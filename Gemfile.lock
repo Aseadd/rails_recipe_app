@@ -311,7 +311,6 @@ DEPENDENCIES
   rubocop
   sass-rails
   solargraph
-  spring
   spring-commands-rspec
   sprockets-rails
   stimulus-rails
