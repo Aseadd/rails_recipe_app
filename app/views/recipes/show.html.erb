@@ -1,0 +1,67 @@
+
+<main class="recipe-show" id="<%= dom_id @recipe %>">
+  <h1> <%= @recipe.name %> <div class="author"> by: <%= @recipe.user.name %></div> </h1>
+  <article class="recipe" >
+        <div class=<%= "is-#{@recipe.public ? 'public' : 'private'}"%> >
+          <%= @recipe.public ? 'Public' : 'Private' %>
+          <label class="switch">
+          <input type="checkbox" <%= @recipe.public ? "checked" : "" %> >
+          <span class="slider round"></span>
+        </label>
+        </div>
+  <div class="spams">
+       
+        <div class="preparation_time_seconds">
+          <strong>preparation:</strong> <%= @recipe.preparation_time_seconds.seconds.in_minutes %> min
+        </div>
+        <div class="cooking_time_seconds">
+          <strong>cooking: </strong><%= @recipe.cooking_time_seconds.seconds.in_minutes %> min
+        </div>
+      </div>
+      <div class="description">
+        <p><%= @recipe.description %></p>
+      </div>
+    </div>
+    <div class="actions">
+      <%= link_to "General Shopping List", recipe_food_index_path, class: 'button_to g-s-l' %>
+      <%= link_to "Back to recipes", recipes_path, class: 'button_to go-back' %>
+      <%= button_to "Destroy this recipe", @recipe, method: :delete, form_class: 'button_to delete' if @recipe.user == current_user %>
+    </div>
+    <div class="contect">
+      <div class="ingredients">
+        <%= ( render "recipe_food/add_ingredient", recipe: @recipe ) if @recipe.user == current_user && @recipe.not_used_ingredients.any? %>
+        <table>
+          <thead>
+            <tr>
+              <th class="ingredients-head">ingredients</th>
+              <th class="amount-head">amount</th>
+              <th class="total-cost-head">total cost</th>
+              <% if @recipe.user == current_user  %>
+                <th class="action-head">actions</th>
+              <% end %>
+            </tr>
+          </thead>
+          <tbody>
+            <% @ingredients.each do |ingredient| %>
+              <tr class=<%= ingredient.need_to_buy > 0 ? 'fail' : 'fulfill'  %>>
+                <td class="food-name">
+                  <%= link_to "#{ingredient.food.name}", ingredient.food %>
+                </td>
+                <td class="food-amount">
+                  <%= "#{ingredient.amount} #{ingredient.food.unit}" %>
+                </td>
+                <td>
+                  <%= "#{ number_to_currency(ingredient.total_cost) }" %>
+                </td>
+                <td>
+                  <%= button_to "Remove", ingredient, method: :delete, class: "delete-btn" if @recipe.user == current_user %>
+                </td>
+              </tr>
+
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      
+  </article>
+</main>

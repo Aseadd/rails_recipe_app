@@ -1,0 +1,30 @@
+
+<p style="color: green"><%= notice %></p>
+
+<div class = "food-item">
+<div class = "owned-by">
+  <span>By: </span>
+  <%= @food.user.name%>
+</div>
+<div class = "food-header">
+  <strong>Food Name</strong>
+  <strong>Unit</strong>
+  <strong>Quantity </strong>
+  <strong>Unit Price</strong>
+</div>
+<div class = "food-detail">
+
+  <p><%= @food.name%></p>
+  <p><%= @food.unit%></p>
+  <p><%= @food.price%></p>
+  <p><%= @food.quantity%></p>
+</div>
+
+  <div class = "action-wrapper">
+  <%= link_to "Back to foods", foods_path, class: "back-btn" %>
+  <%= button_to "Delete", @food, method: :delete, class: "destroy-btn" if @food.user == current_user %>
+  </div>
+</div>
+</div>
+
+

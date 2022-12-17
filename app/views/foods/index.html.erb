@@ -1,0 +1,40 @@
+<%= stylesheet_link_tag "user_list"%>
+<p style="color: green"><%= notice %></p>
+
+<div class="container user-list">
+<h1>Foods</h1>
+
+<div class= "add-food"><%= link_to "New food", new_food_path %> </div>
+<% if @foods.length > 0 %>
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Unit</th>
+			<th>Unit Price</th>
+			<th>Quantity</th>
+			<th>Action</th>
+			<th>Details</th>
+		</tr>
+	</thead>
+<tbody>
+    <% @foods.each do |food|%>
+	<tr>
+		<td><%= food.name%></td>
+        <td><%= food.unit%></td>
+        <td><%= food.price%></td>
+        <td><%= food.quantity%></td>
+        <td><%= button_to "Delete", food, method: :delete, class: "delete-btn"%></td>
+        <td><%= link_to "Detail", food, class: "detail-btn" %></td>
+		</tr>
+    <% end %>
+</tbody>
+</table>
+<% else %>
+  <div class ="empty-msg">
+	<h2>There are no foods</h2>
+  </div>
+<% end %>
+</div>
+
+

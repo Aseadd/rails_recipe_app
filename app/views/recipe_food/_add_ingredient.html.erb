@@ -1,0 +1,16 @@
+<div>
+	<%= form_with model: RecipeFood.new, url: {:controller => "recipe_food", :action => "create" } , class: 'add-ingredients-action-form' do |f| %>
+	<%= f.label :amount, 'Add' %>
+	<%= f.number_field :amount, required: true, min: 1, value: 1  %>
+
+	<%= f.hidden_field  :recipe_id, value: recipe.id %>
+
+	<%= f.select :food_id, (
+		recipe.not_used_ingredients.map do |ingredient|
+			["#{ingredient.name} (#{ingredient.unit})", ingredient.id]
+		end
+	) %>
+
+	<%= f.submit "add", disable_with: 'adding...', class: 'add-btn' %>
+	<% end %>
+</div>

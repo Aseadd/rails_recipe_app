@@ -5,7 +5,7 @@ on: pull_request
 jobs:
   rspec:
     name: RSpec
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     strategy:
       matrix:
         node-version:
@@ -61,7 +61,6 @@ jobs:
 
       - name: Setup test database
         env:
-          RAILS_ENV: test
           DATABASE_USER: ${{ matrix.database-user }}
           DATABASE_PASSWORD: ${{ matrix.database-password }}
           DATABASE_HOST: ${{ matrix.database-host }}
