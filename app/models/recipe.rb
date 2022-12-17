@@ -13,6 +13,14 @@ class Recipe < ApplicationRecord
     user.foods - ingredients
   end
 
+  def total_recipe_cost
+    total_cost = 0
+    recipeFood.includes(:food).all.each do |ingredient|
+      total_cost += ingredient.total_cost
+    end
+    total_cost
+  end
+
   def self.publics
     where(public: true)
   end

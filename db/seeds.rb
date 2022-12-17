@@ -101,7 +101,7 @@ def create_hot_dog_with_ingredients(foods, user_in)
   tomatoes = Food.create(
     name: 'Tomatoes',
     unit: 'piece',
-    price: '1010.1010',
+    price: '1.1',
     quantity: 0,
     user: user_in
   )
@@ -118,40 +118,40 @@ end
 def user_create_foods_and_recipes(user_in)
   puts "inserting recipes and food to #{user_in.name}"
 
-  # gram kilogram liter milliliter piece
+  # gram kilogram liter milliliter ml piece
   foods = Food.create([
                         {
                           name: 'sausage',
                           unit: 'piece',
-                          price: '1.1',
+                          price: '3.1',
                           quantity: 2,
                           user: user_in
                         },
                         {
                           name: 'Mayonnaise',
-                          unit: 'milliliter',
-                          price: '2.2',
+                          unit: 'ml',
+                          price: '0.005',
                           quantity: 500,
                           user: user_in
                         },
                         {
                           name: 'Onion',
-                          unit: 'gram',
-                          price: '3.3',
+                          unit: 'g',
+                          price: '0.003',
                           quantity: 30,
                           user: user_in
                         },
                         {
                           name: 'Ketchup',
-                          unit: 'milliliter',
-                          price: '4.4',
+                          unit: 'ml',
+                          price: '0.005',
                           quantity: 300,
                           user: user_in
                         },
                         {
                           name: 'Cabbage',
-                          unit: 'gram',
-                          price: '5.5',
+                          unit: 'g',
+                          price: '0.004',
                           quantity: 100,
                           user: user_in
                         },

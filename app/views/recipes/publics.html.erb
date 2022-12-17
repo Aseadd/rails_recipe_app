@@ -1,47 +1,45 @@
-<p style="color: green"><%= notice %></p>
+<%= stylesheet_link_tag "user_list"%>
 
-<h1>Public Recipes</h1>
+<div class="container ">
+  <h1>Public Recipes</h1>
+  
+  <% if @publics.length > 0 %>
+    <div class = "recipe-container">
+      <% @publics.each do |p|%>
+        <div class = "recipe-item">
+          <div class = "recipe">
+            <div class = "recipe-name">
+              <%= p.name%>
+            </div>
+            <div class = "recipe-description">
+              <%= p.description%>
+            </div>
+          </div>
+          <div class = "wrapped-btns">
+            <div class = "recipe-action first-left">
+              <strong class="owner-name">By:  </strong>
+              <%= p.user.name%>
+            </div>
 
-<% if @publics.length > 0 %>
-<div class = "recipe-container">
-<% @publics.each do |p|%>
-<div class = "recipe-item">
-  <div class = "recipe">
-    <div class = "recipe-name">
-      <%= p.name%>
-    </div>
-    <div class = "recipe-description">
-      <%= p.description%>
-    </div>
+            <div class ="recipe-action">
+              <%= link_to "Details ", recipe_path(p)%>
+            </div>
 
-    <div class= "total-items">
-      <div class = "recipe-ingredients">
-        <strong>Total Food Items: </strong>
-        <%= 1212121212%>
-      </div>
+            <div class= "total-items">
+              <div class = "recipe-ingredients">
+                <strong>Total Food Items: </strong>
+                <%= p.ingredients.count %>
+                <strong>Total recipe: </strong>
+                <%= number_to_currency(p.total_recipe_cost) %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
-   </div>
-   <div class = "wrapped-btns">
-   <div class = "recipe-action">
-   <strong class="owner-name">By:  </strong>
-      <%= p.user.name%>
+  <% else %>
+    <div class ="empty-msg">
+      <h2>There are no Recipes</h2>
     </div>
-
-    <div class = "recipe-action">
-      <%= button_to "Remove", p, method: :delete, class: "delete-btn"%>
-    </div>
-
-    <div class ="recipe-action">
-      <%= link_to "Details ", recipe_path(p)%>
-    </div>
-    </div>
-    </div>
-
-<% end %>
+  <% end %>
 </div>
-	
-<% else %>
-  <div class ="empty-msg">
-	<h2>There are no Public Recipes</h2>
-  </div>
-<% end %>

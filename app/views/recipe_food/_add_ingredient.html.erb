@@ -7,7 +7,7 @@
 
 	<%= f.select :food_id, (
 		recipe.not_used_ingredients.map do |ingredient|
-			[ingredient.name, ingredient.id]
+			["#{ingredient.name} (#{ingredient.unit})", ingredient.id]
 		end
 	) %>
 
