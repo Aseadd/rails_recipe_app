@@ -60,6 +60,9 @@ group :development, :test do
 
   # Add devise
   gem 'devise'
+
+  # add capybara
+  gem 'capybara'
 end
 
 group :development do
@@ -80,4 +83,7 @@ group :development do
 
   # ruby intellisense
   gem 'solargraph'
+
+  # rails controller testing
+  gem 'rails-controller-testing'
 end

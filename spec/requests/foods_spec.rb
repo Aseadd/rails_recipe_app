@@ -1,34 +1,33 @@
 require 'rails_helper'
 RSpec.describe '/foods', type: :request do
-  describe 'GET /index' do
-    it 'renders a successful response'
-  end
+  include Devise::Test::IntegrationHelpers
 
-  describe 'GET /show' do
-    it 'renders a successful response'
+  let(:user) { User.create(name: 'ruth', email: 'ruth@mail.com', password: '12345678') }
+  let(:food) { user.foods(name: 'food A test name', unit: 'milliliter', price: '1111.11111', quantity: 2345) }
+
+  describe 'GET /index' do
+    before do
+      sign_in user
+      get foods_path
+    end
+
+    it 'should return response status correct (ok)' do
+      expect(response).to have_http_status('200')
+    end
   end
 
   describe 'GET /new' do
-    it 'renders a successful response'
-  end
-
-  describe 'POST /create' do
-    context 'with valid parameters' do
-      it 'creates a new Food'
-
-      it 'redirects to the created food'
+    before do
+      sign_in user
+      get new_food_path
     end
 
-    context 'with invalid parameters' do
-      it 'does not create a new Food'
-
-      it "renders a response with 422 status (i.e. to display the 'new' template)"
+    it 'should return response status correct (ok)' do
+      expect(response).to have_http_status('200')
     end
-  end
 
-  describe 'DELETE /destroy' do
-    it 'destroys the requested food'
-
-    it 'redirects to the foods list'
+    it 'respons to html' do
+      expect(response.content_type).to include 'text/html'
+    end
   end
 end
