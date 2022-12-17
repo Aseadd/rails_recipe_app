@@ -1,36 +1,30 @@
 require 'rails_helper'
 
 RSpec.describe '/recipes', type: :request do
+  include Devise::Test::IntegrationHelpers
+
+  let(:user) { User.create(name: 'ruth', email: 'ruth@mail.com', password: '12345678') }
+  let(:recipe) do
+    user.recipes.create(name: 'test recipe name', preparation_time_seconds: 10.minute.second,
+                        cooking_time_seconds: 5.minute.second, description: 'test recipe description', public: true)
+  end
+
   describe 'GET /index' do
-    it 'renders a successful response'
-  end
-
-  describe 'GET /show' do
-    it 'renders a successful response'
-  end
-
-  describe 'GET /new' do
-    it 'renders a successful response'
-  end
-
-  describe 'POST /create' do
-    context 'with valid parameters' do
-      it 'creates a new Recipe'
-
-      it 'redirects to the created recipe'
+    before do
+      sign_in user
+      get recipes_path
     end
 
-    context 'with invalid parameters' do
-      it 'does not create a new Recipe'
-
-      # expect(response).to have_http_status(:unprocessable_entity)
-      it "renders a response with 422 status (i.e. to display the 'new' template)"
+    it 'should return response status correct (ok)' do
+      expect(response).to have_http_status('200')
     end
-  end
 
-  describe 'DELETE /destroy' do
-    it 'destroys the requested recipe'
+    it 'respons to html' do
+      expect(response.content_type).to include 'text/html'
+    end
 
-    it 'redirects to the recipes list'
+    it 'should return response status correct (ok)' do
+      expect(response).to have_http_status('200')
+    end
   end
 end
