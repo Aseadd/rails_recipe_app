@@ -2,10 +2,9 @@
 <main class="recipe-show" id="<%= dom_id @recipe %>">
   <h1> <%= @recipe.name %> <div class="author"> by: <%= @recipe.user.name %></div> </h1>
   <article class="recipe" >
-   <div class="status">
-        <%= @recipe.public ? "Public" : "Private"%>
-        
-        <label class="switch">
+        <div class=<%= "is-#{@recipe.public ? 'public' : 'private'}"%> >
+          <%= @recipe.public ? 'Public' : 'Private' %>
+          <label class="switch">
           <input type="checkbox" <%= @recipe.public ? "checked" : "" %> >
           <span class="slider round"></span>
         </label>
@@ -13,10 +12,10 @@
   <div class="spams">
        
         <div class="preparation_time_seconds">
-          preparation: <%= @recipe.preparation_time_seconds.seconds.in_minutes %> min
+          <strong>preparation:</strong> <%= @recipe.preparation_time_seconds.seconds.in_minutes %> min
         </div>
         <div class="cooking_time_seconds">
-          cooking: <%= @recipe.cooking_time_seconds.seconds.in_minutes %> min
+          <strong>cooking: </strong><%= @recipe.cooking_time_seconds.seconds.in_minutes %> min
         </div>
       </div>
       <div class="description">

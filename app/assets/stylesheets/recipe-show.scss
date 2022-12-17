@@ -37,6 +37,26 @@
     background-color: aliceblue;
     width: 100%;
 
+    .is-private,
+        .is-public {
+          margin-left: auto;
+        }
+
+      .spams {
+        grid-column: 2 / -1;
+        grid-row: 1 / span 1;
+        display: flex;
+        justify-content: start;
+        gap: 2rem;
+
+      }
+
+      .description {
+        grid-column: 2 / -1;
+        grid-row: 1 / span 2;
+        margin: 2rem 1rem;
+      }
+
     .actions {
       display: flex;
 
@@ -75,25 +95,6 @@
         border-collapse: separate;
         border-spacing: 1rem 0;
         gap: 1rem;
-      }
-
-      .spams {
-        grid-column: 2 / -1;
-        grid-row: 1 / span 1;
-        display: flex;
-        justify-content: start;
-        gap: 2rem;
-
-        .is-private,
-        .is-public {
-          margin-left: auto;
-        }
-      }
-
-      .status {
-        display: flex;
-        text-align: center;
-        justify-content: center;
       }
 
       .ingredients {
@@ -162,12 +163,6 @@
             }
           }
         }
-      }
-
-      .description {
-        grid-column: 2 / -1;
-        grid-row: 1 / span 2;
-        margin: 2rem 1rem;
       }
     }
   }
