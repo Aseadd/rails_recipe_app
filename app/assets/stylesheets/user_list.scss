@@ -101,6 +101,8 @@
     display: flex;
     flex-direction: row;
     margin: 10px;
+    align-items: center;
+    justify-content: end;
   }
 
   .recipe-action {
@@ -108,6 +110,10 @@
     flex-direction: row;
     justify-content: space-between;
     margin: 10px;
+
+    &.first-left {
+      margin-right: auto;
+    }
 
     a {
       display: block;
@@ -128,12 +134,17 @@
   }
 }
 
+.container {
+  .add-recipe {
+    @include add-recipe;
+  }
+}
+
 .container.user-list {
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  .add-recipe,
   .add-food {
     @include add-recipe;
   }
