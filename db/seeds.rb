@@ -69,9 +69,6 @@ def create_hot_dog_with_ingredients(foods, user_in)
   puts '    inserted hot dog breat'
 
   foods.each do |food|
-    next if food.name == 'sausage'
-    next if food.name == 'hot dog breat'
-
     RecipeFood.create(
       amount: 10 + (user_in.id % 5),
       food:,
