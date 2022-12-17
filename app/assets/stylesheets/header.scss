@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 .notification-bar {
   text-align: center;
 
@@ -15,6 +16,7 @@ header {
   padding: 1rem;
   justify-content: stretch;
   gap: 1rem;
+  font-family: 'Raleway', sans-serif;
   font-size: 1.25rem;
   background-color: aliceblue;
 
@@ -25,6 +27,7 @@ header {
 
   .logo {
     font-weight: bolder;
+    cursor: pointer;
   }
 
   nav {
