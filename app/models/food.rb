@@ -4,7 +4,7 @@ class Food < ApplicationRecord
   has_many :recipes, through: :RecipeFood
 
   validates :name, presence: true
-  validates :unit, presence: true, inclusion: { in: %w[g gram Kg kilogram Kg liter lm milliliter piece] }
+  validates :unit, presence: true, inclusion: { in: %w[g gram Kg kilogram L liter ml milliliter piece] }
   validates :price, presence: true, numericality: { greater_than: 0 }
   validates :quantity, presence: true, numericality: { greater_than_or_equal_to: 0 }
 end
