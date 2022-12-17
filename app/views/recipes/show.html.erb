@@ -1,28 +1,58 @@
-<p style="color: green"><%= notice %></p>
+<main class="recipe-show" id="<%= dom_id @recipe %>">
+  <h1> <%= @recipe.name %> <span class="author"> by: <%= @recipe.user.name %></span> </h1>
+  <article class="recipe" >
+    <div class="actions">
+      <%= link_to "General Shopping List", recipe_food_index_path, class: 'button_to g-s-l' %>
+      <%= link_to "Back to recipes", recipes_path, class: 'button_to go-back' %>
+      <%= button_to "Destroy this recipe", @recipe, method: :delete, form_class: 'button_to delete' %>
+    </div>
+    <div class="contect">
+      <div class="ingredients">
+        <%= ( render "recipe_food/add_ingredient", recipe: @recipe ) if @recipe.user == current_user && @recipe.not_used_ingredients.any? %>
+        <table>
+          <thead>
+            <tr>
+              <th class="ingredients-head">ingredients</th>
+              <th class="amount-head">amount</th>
+              <th class="total-cost-head">total cost</th>
+              <th class="action-head">actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @ingredients.each do |ingredient| %>
+              <tr class=<%= ingredient.food.quantity >= ingredient.amount ? 'fulfill' : 'fail' %>>
+                <td class="food-name">
+                  <%= link_to "#{ingredient.food.name}", ingredient.food %>
+                </td>
+                <td class="food-amount">
+                  <%= "#{ingredient.amount} #{ingredient.food.unit}" %>
+                </td>
+                <td>
+                  <%= "$#{ingredient.total_cost}" %>
+                </td>
+                <td>
+                  <%= button_to "Remove", ingredient, method: :delete, class: "delete-btn"%>
+                </td>
+              </tr>
 
-<div class = "recipe-item">
-<div class = "recipe-header">
-<div class = "recipe-name">
-  <strong>Name</strong>
-    <%= @recipe.name%>
-  </div>
-  <strong>Preparation Time in Minutes </strong>
-  <%= @recipe.preparation_time_seconds%>
-  <strong>Cooking Time in Minutes </strong>
-    <%= @recipe.cooking_time_seconds%>
-  </div>
-  <div class = "recipe-detail">
-  <strong>Description </strong>
-    <%= @recipe.description%>
-
- <%= link_to "Back to recipes", recipes_path %>
-
-  <%= button_to "Destroy this recipe", @recipe, method: :delete %>
-  </div>
-  
-  
-   <strong>By</strong>
-    <%= @recipe.user.name%>
-</div>
-
-
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <div class="spams">
+        <span class="preparation_time_seconds">
+          preparation: <%= @recipe.preparation_time_seconds.seconds.in_minutes %> min
+        </span>
+        <span class="cooking_time_seconds">
+          cooking: <%= @recipe.cooking_time_seconds.seconds.in_minutes %> min
+        </span>
+        <span class=<%= "is-#{@recipe.public ? 'public' : 'private'}"%> >
+          <%= @recipe.public ? 'Public' : 'Private' %>
+        </span>
+      </div>
+      <div class="description">
+        <p><%= @recipe.description %></p>
+      </div>
+    </div>
+  </article>
+</main>
