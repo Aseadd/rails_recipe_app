@@ -22,7 +22,7 @@
 
   <div class = "action-wrapper">
   <%= link_to "Back to foods", foods_path, class: "back-btn" %>
-  <%= button_to "Delete", @food, method: :delete, class: "destroy-btn" %>
+  <%= button_to "Delete", @food, method: :delete, class: "destroy-btn" if @food.user == current_user %>
   </div>
 </div>
 </div>
