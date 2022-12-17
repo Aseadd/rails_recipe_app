@@ -76,7 +76,7 @@ group :development do
   # bundle config set without 'development test'gem 'spring'
 
   # Spring for rspec
-  gem 'spring-commands-rspec'
+  # gem 'spring-commands-rspec'
 
   # ruby linters
   gem 'rubocop'
