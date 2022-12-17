@@ -38,24 +38,23 @@
     width: 100%;
 
     .is-private,
-        .is-public {
-          margin-left: auto;
-        }
+    .is-public {
+      margin-left: auto;
+    }
 
-      .spams {
-        grid-column: 2 / -1;
-        grid-row: 1 / span 1;
-        display: flex;
-        justify-content: start;
-        gap: 2rem;
+    .spams {
+      grid-column: 2 / -1;
+      grid-row: 1 / span 1;
+      display: flex;
+      justify-content: start;
+      gap: 2rem;
+    }
 
-      }
-
-      .description {
-        grid-column: 2 / -1;
-        grid-row: 1 / span 2;
-        margin: 2rem 1rem;
-      }
+    .description {
+      grid-column: 2 / -1;
+      grid-row: 1 / span 2;
+      margin: 2rem 1rem;
+    }
 
     .actions {
       display: flex;
