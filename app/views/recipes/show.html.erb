@@ -4,7 +4,7 @@
     <div class="actions">
       <%= link_to "General Shopping List", recipe_food_index_path, class: 'button_to g-s-l' %>
       <%= link_to "Back to recipes", recipes_path, class: 'button_to go-back' %>
-      <%= button_to "Destroy this recipe", @recipe, method: :delete, form_class: 'button_to delete' %>
+      <%= button_to "Destroy this recipe", @recipe, method: :delete, form_class: 'button_to delete' if @recipe.user == current_user %>
     </div>
     <div class="contect">
       <div class="ingredients">
@@ -15,7 +15,9 @@
               <th class="ingredients-head">ingredients</th>
               <th class="amount-head">amount</th>
               <th class="total-cost-head">total cost</th>
-              <th class="action-head">actions</th>
+              <% if @recipe.user == current_user  %>
+                <th class="action-head">actions</th>
+              <% end %>
             </tr>
           </thead>
           <tbody>
@@ -31,7 +33,7 @@
                   <%= "$#{ingredient.total_cost}" %>
                 </td>
                 <td>
-                  <%= button_to "Remove", ingredient, method: :delete, class: "delete-btn"%>
+                  <%= button_to "Remove", ingredient, method: :delete, class: "delete-btn" if @recipe.user == current_user %>
                 </td>
               </tr>
 
