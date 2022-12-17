@@ -1,42 +1,54 @@
-.shopping-item {
-  display: flex;
-  flex-direction: column;
-  margin: 10px;
-  border: 2px solid #003049;
-  border-radius: 5px;
-  background: aliceblue;
-}
+/* stylelint-disable-next-line selector-id-pattern */
+main#recipe_foods {
+  .shopping-item {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    border: 2px solid #003049;
+    border-radius: 5px;
+    background: aliceblue;
+    padding: 1rem 2rem;
 
-.shopping-header {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  font-family: Raleway, sans-serif;
-}
+    .cost-and-items {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 1.5rem;
+      font-weight: 1.5rem;
 
-.shopping-content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
+      .total-items {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        margin-left: 50px;
+      }
 
-.cost-and-items {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 20px;
-}
+      .total-cost {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        margin-right: 50px;
+      }
+    }
 
-.total-items {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  margin-left: 50px;
-}
+    table {
+      border-collapse: collapse;
+      margin: 25px 0;
+      font-size: 1.1rem;
+      overflow: hidden;
 
-.total-cost {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  margin-right: 50px;
+      thead tr {
+        background-color: #003049;
+        color: #fff;
+        text-align: left;
+        font-weight: bold;
+      }
+
+      th,
+      td {
+        padding: 12px 15px;
+      }
+    }
+  }
 }
