@@ -19,7 +19,7 @@
                   <strong>Total Food Items: </strong>
                   <%= p.ingredients.count %>
                   <strong>Total recipe: </strong>
-                  $<%= p.total_recipe_cost%>
+                  <%= number_to_currency(p.total_recipe_cost) %>
                 </div>
               </div>
           </div>

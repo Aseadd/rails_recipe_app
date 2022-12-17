@@ -1,10 +1,11 @@
 @mixin action-btn {
   all: unset;
   cursor: pointer;
-  padding: 0.2rem 0.5rem;
+  padding: 0 0.5rem;
   border: 1 sold black;
   border-radius: 0.2rem;
   font-weight: bolder;
+  line-height: 1.5rem;
 }
 
 .recipe-show {
@@ -133,12 +134,22 @@
         .add-ingredients-action-form {
           display: flex;
           gap: 1rem;
+          align-items: stretch;
+          justify-content: center;
+          line-height: 1.5rem;
+          padding: 0.1rem 0;
+
+          /* stylelint-disable-next-line selector-id-pattern */
+          #recipe_food_amount {
+            max-width: 3rem;
+          }
 
           .add-btn {
             @include action-btn;
 
             background-color: green;
             color: white;
+            line-height: 1.5rem;
 
             >* {
               all: unset;
