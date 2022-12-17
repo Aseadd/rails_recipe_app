@@ -1,0 +1,54 @@
+/* stylelint-disable-next-line selector-id-pattern */
+main#recipe_foods {
+  .shopping-item {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    border: 2px solid #003049;
+    border-radius: 5px;
+    background: aliceblue;
+    padding: 1rem 2rem;
+
+    .cost-and-items {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 1.5rem;
+      font-weight: 1.5rem;
+
+      .total-items {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        margin-left: 50px;
+      }
+
+      .total-cost {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        margin-right: 50px;
+      }
+    }
+
+    table {
+      border-collapse: collapse;
+      margin: 25px 0;
+      font-size: 1.1rem;
+      overflow: hidden;
+
+      thead tr {
+        background-color: #003049;
+        color: #fff;
+        text-align: left;
+        font-weight: bold;
+      }
+
+      th,
+      td {
+        padding: 12px 15px;
+      }
+    }
+  }
+}

@@ -81,10 +81,6 @@ RSpec.describe 'recipes/show', type: :view do
       expect(rendered).to match(/#{recipe.description}/)
     end
 
-    it 'render recipe public' do
-      expect(rendered).to match(/public/)
-    end
-
     it 'render recipe author' do
       expect(rendered).to match(/#{recipe.user.name}/)
     end
