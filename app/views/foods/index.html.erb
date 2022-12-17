@@ -25,7 +25,7 @@
         <td><%= food.price%></td>
         <td><%= food.quantity%></td>
         <td><%= button_to "Delete", food, method: :delete, class: "delete-btn"%></td>
-        <td><%= link_to "Detail", food %></td>
+        <td><%= link_to "Detail", food, class: "detail-btn" %></td>
 		</tr>
     <% end %>
 </tbody>
