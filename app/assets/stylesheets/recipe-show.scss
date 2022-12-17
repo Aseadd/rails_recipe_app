@@ -90,6 +90,12 @@
         }
       }
 
+      .status {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+      }
+
       .ingredients {
         grid-column: 1 / 2;
         grid-row: 1 / span 1;
